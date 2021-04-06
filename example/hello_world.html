@@ -5,39 +5,63 @@
     <title>Hello World</title>
   </head>
   <body>
+      <div id="LowEffortFrontEnd"></div>
   <script src="../dist/low-effort-front-end.js" type="text/javascript"></script>
   <script>
     new LowEffortFrontEnd({
         startPage: "#home",
         anonymStatistics: true,
-        home: {
-            title: "Hello World - Home",
-            content: [
-                {
-                    type: "h1",
-                    text: "Hello and Welcome to this Hello World"
-                },
-                {
-                    type: "p",
-                    text: "low-effort-front-end-js is a front end framework for all the beings that don't want to fiddle around with front end!\n It is fast and easy configurable (the emphasis is on fast).\nlow-effort-front-end-js is best suited for rapid prototyping."
-                },
-                {
-                    type: "button",
-                    text: "Alert",
-                    click: {
-                        type: "custom",
-                        js: "#test"
+        pages: {
+            home: {
+                title: "Hello World - Home",
+                content: [
+                    {
+                        type: "h1",
+                        text: "Hello and Welcome to this Hello World"
+                    },
+                    {
+                        type: "p",
+                        text: "low-effort-front-end-js is a front end framework for all the beings that don't want to fiddle around with front end!\n It is fast and easy configurable (the emphasis is on fast).\nlow-effort-front-end-js is best suited for rapid prototyping."
+                    },
+                    {
+                        type: "button",
+                        text: "Alert",
+                        click: {
+                            type: "custom",
+                            js: "alert('Hello Custom JS')"
+                        }
+                    },
+                    {
+                        type: "button",
+                        text: "Go To Test Page",
+                        click: {
+                            type: "router",
+                            goTo: "#test"
+                        }
                     }
-                },
-                {
-                    type: "button",
-                    text: "Go To Page 404",
-                    click: {
-                        type: "router",
-                        goTo: "#test"
+                ]
+            },
+            test: {
+                title: "Hello World - Test",
+                content: [
+                    {
+                        type: "h1",
+                        text: "test"
+                    },
+                    {
+                        type: "p",
+                        text: "Test page :)"
+                    },
+                    {
+                        type: "button",
+                        text: "Go To Home Page",
+                        click: {
+                            type: "router",
+                            goTo: "#home"
+                        }
                     }
-                }
-            ]
+                ]
+            }
         }
     });
 </script>
