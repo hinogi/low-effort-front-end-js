@@ -7,7 +7,7 @@ low-effort-front-end-js is a front end framework for all the beings that don't w
 It is **fast and easy configurable** (the emphasis is on **fast**).  
 low-effort-front-end-js is best **suited for rapid prototyping**.
 
-## Getting Startet
+## Getting Started
 1. define start-server
 2. get config from start-server
 2. get event-tree from start-server
