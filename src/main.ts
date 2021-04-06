@@ -3,25 +3,25 @@ import { Router } from "./router";
 
 export type Path = string;
 
-export interface Click {
+export type Click = {
     type: "router"|"submit"|"custom",
     goTo?: string,
     js?: string,
 }
 
-export interface PageElement {
+export type PageElement = {
     type: "h1"|"p"|"button",
     text?: string,
     className?: string,
     click?: Click
 }
 
-export interface Page {
+export type Page = {
     title: string,
     content: Array<PageElement>
 }
 
-export interface StartConfig {
+export type StartConfig = {
     startPage: Path,
     anonymStatistics: boolean,
     pages: {
@@ -44,17 +44,11 @@ const default404: Page = {
 }
 
 export default class LowEffortFrontEnd {
-    startConfig: StartConfig;
-
-    constructor(startConfig: StartConfig) {
+    constructor(private startConfig: StartConfig, private Router) {
         console.log("Start Low Effort Front End - https://github.com/i5heu/low-effort-front-end-js");
         
         if(!startConfig.pages[404]){
             startConfig.pages[404] = default404;
         }
-        
-        this.startConfig = startConfig;
-
-        new Router(startConfig);
     }
 }
