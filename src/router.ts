@@ -2,27 +2,14 @@ import { StartConfig } from "./main";
 import { RenderPage } from "./RenderPage";
 
 export class Router {
-    startConfig: StartConfig;
-
-    constructor(startConfig: StartConfig) {
-        this.startConfig = startConfig;
-
+    constructor(private startConfig: StartConfig) {
         if (!this.hash || this.hash == "") {
             this.hash = startConfig.startPage;
         }
 
-
         //TODO get 404
 
-        window.addEventListener("hashchange", () => {
-            if (this.checkIf404(location.hash)) {
-                this.initRenderPage(location.hash);
-                return;
-            }
-
-            this.hash = "#404";
-            this.initRenderPage(location.hash);
-        });
+        window.addEventListener("hashchange", () => this.changePage(location.hash));
 
         this.initRenderPage(location.hash);
     }
