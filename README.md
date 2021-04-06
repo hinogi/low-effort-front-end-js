@@ -4,7 +4,8 @@ You don't care about front end development?
 Fine here is the front end for you!  
   
 low-effort-front-end-js is a front end framework for all the beings that don't want to frickel around with front end!  
-it is **fast and easy configurable** (the emphasis is on **fast**). 
+It is **fast and easy configurable** (the emphasis is on **fast**).  
+low-effort-front-end-js is best **suited for rapid prototyping**.
 
 ## Getting Startet
 1. define start-server
