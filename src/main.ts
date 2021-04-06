@@ -1,6 +1,5 @@
 import { Router } from "./router";
 
-
 export type Path = string;
 
 export type Click = {
@@ -44,11 +43,7 @@ const default404: Page = {
 }
 
 export default class LowEffortFrontEnd {
-    constructor(private startConfig: StartConfig, private Router) {
+    constructor(private Router) {
         console.log("Start Low Effort Front End - https://github.com/i5heu/low-effort-front-end-js");
-        
-        if(!startConfig.pages[404]){
-            startConfig.pages[404] = default404;
-        }
     }
 }
