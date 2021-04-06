@@ -49,6 +49,7 @@ class elementCreator {
     static element(element: PageElement, router: Router) {
         const el = document.createElement(element.type);
         if (element.text) el.innerText = element.text;
+        if (element.className) el.className = element.className;
         if (element.click) this.createClickListener(element, el, router);
 
         return el;

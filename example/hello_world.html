@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
+    <script src="../dist/low-effort-front-end.js" type="text/javascript"></script>
+    <style>
+        .test.alert {
+            color: #fff;
+            background-color: #c80000;
+        }
+    </style>
   </head>
   <body>
       <div id="LowEffortFrontEnd"></div>
-  <script src="../dist/low-effort-front-end.js" type="text/javascript"></script>
   <script>
     new LowEffortFrontEnd({
         startPage: "#home",
@@ -26,6 +32,7 @@
                     {
                         type: "button",
                         text: "Alert",
+                        className: "test alert",
                         click: {
                             type: "custom",
                             js: "alert('Hello Custom JS')"

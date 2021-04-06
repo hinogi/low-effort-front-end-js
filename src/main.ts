@@ -12,6 +12,7 @@ export interface Click {
 export interface PageElement {
     type: "h1"|"p"|"button",
     text?: string,
+    className?: string,
     click?: Click
 }
 
